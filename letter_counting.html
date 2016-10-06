@@ -1,0 +1,71 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Letter counter</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body> 
+<script type="text/javascript">
+    var character_lookup = {
+        'a': 1, 
+        'b': 2, 
+        'c': 2, 
+        'd': 2, 
+        'e': 1, 
+        'f': 2, 
+        'g': 2, 
+        'h': 2, 
+        'i': 1, 
+        'j': 3, 
+        'k': 2, 
+        'l': 2, 
+        'm': 2, 
+        'n': 2, 
+        'o': 1, 
+        'p': 2, 
+        'q': 2, 
+        'r': 2, 
+        's': 2, 
+        't': 2, 
+        'u': 1, 
+        'v': 3, 
+        'w': 2, 
+        'x': 2, 
+        'y': 7, 
+        'z': 3, 
+        'ä': 1, 
+        'ü': 1, 
+        'ö': 1, 
+        'ß': 5, 
+        }
+    function calculate_letter_value(text){
+        var length = 0;
+        for (var i = 0, len=text.length; i < len; i++) {
+          // alert(text[i]);
+        var lower_text = text.toLowerCase();
+        if (lower_text[i] in character_lookup) {
+          length += character_lookup[lower_text[i]];
+        }
+        }
+        return length;
+    }
+</script>
+<form oninput="x.value=calculate_letter_value(sentence.value);" 
+        onsubmit="x.value=calculate_letter_value(sentence.value);return false;">
+    Sentence: <br>
+    <input type="text" name="sentence" id="sentence", size="120" autocomplete="off"><br>
+    Count: <output name="x" for="sentence"></output>
+</form>
+</body>
+</html>

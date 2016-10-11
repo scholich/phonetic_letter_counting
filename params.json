@@ -1,0 +1,6 @@
+{
+  "name": "Phonetic letter counting",
+  "tagline": "Count letters in a sentence according to the phonetic sounds in the German alphabet.",
+  "body": "Phonetic letter counting\r\n========================\r\n\r\nSimple scripts for game of counting phonetic letters in a sentence.\r\n\r\n<iframe width=\"560\" height=\"315\" src=\"https://raw.githubusercontent.com/scholich/phonetic_letter_counting/master/letter_counting.html\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

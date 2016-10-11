@@ -35,8 +35,57 @@
 <a id="phonetic-letter-counting" class="anchor" href="#phonetic-letter-counting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Phonetic letter counting</h1>
 
 <p>Simple scripts for game of counting phonetic letters in a sentence.</p>
-          <p> <iframe src="https://raw.githubusercontent.com/scholich/phonetic_letter_counting/master/letter_counting.html" height=1280 width=800></iframe>
-          </p>
+<script type="text/javascript">
+    var character_lookup = {
+        'a': 1, 
+        'b': 2, 
+        'c': 2, 
+        'd': 2, 
+        'e': 1, 
+        'f': 2, 
+        'g': 2, 
+        'h': 2, 
+        'i': 1, 
+        'j': 3, 
+        'k': 2, 
+        'l': 2, 
+        'm': 2, 
+        'n': 2, 
+        'o': 1, 
+        'p': 2, 
+        'q': 2, 
+        'r': 2, 
+        's': 2, 
+        't': 2, 
+        'u': 1, 
+        'v': 3, 
+        'w': 2, 
+        'x': 2, 
+        'y': 7, 
+        'z': 3, 
+        'ä': 1, 
+        'ü': 1, 
+        'ö': 1, 
+        'ß': 5, 
+        }
+    function calculate_letter_value(text){
+        var length = 0;
+        for (var i = 0, len=text.length; i < len; i++) {
+          // alert(text[i]);
+        var lower_text = text.toLowerCase();
+        if (lower_text[i] in character_lookup) {
+          length += character_lookup[lower_text[i]];
+        }
+        }
+        return length;
+    }
+</script>
+<form oninput="x.value=calculate_letter_value(sentence.value);" 
+        onsubmit="x.value=calculate_letter_value(sentence.value);return false;">
+    Sentence: <br>
+    <input type="text" name="sentence" id="sentence", size="90" autocomplete="off"><br>
+    Count: <output name="x" for="sentence"></output>
+</form>
 
         </section>
 
